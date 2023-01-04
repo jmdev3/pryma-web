@@ -1,7 +1,10 @@
-import { Inter } from "@next/font/google";
 import Head from "next/head";
+import Image from "next/image";
 
-const inter = Inter({ subsets: ["latin"] });
+import localFont from "@next/font/local";
+
+// Font files can be colocated inside of `pages`
+const myFont = localFont({ src: "../public/Glysa.otf" });
 
 export default function Home() {
   return (
@@ -14,15 +17,21 @@ export default function Home() {
       </Head>
 
       <div
+        className={myFont.className}
         style={{
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           height: "100%",
           color: "white",
+          gap: 20,
+          fontSize: 18,
+          fontWeight: 400,
         }}
       >
-        Pryma Record, comming soon
+        <Image src="/logo.png" alt="Pryma Logo" width={200} height={40} />
+        Coming soon
       </div>
     </>
   );
