@@ -2,10 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 
 import localFont from "@next/font/local";
-import { motion } from "framer-motion";
-import Lottie from "lottie-react";
-
-import lottieJsonFile from "../utils/lottie-animation.json";
 
 // Font files can be colocated inside of `pages`
 const myFont = localFont({ src: "../public/Glysa.otf" });
@@ -19,11 +15,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Lottie
-        loop
-        style={{ height: 40, margin: 20, position: "absolute" }}
-        animationData={lottieJsonFile}
-      />
       <div
         className={myFont.className}
         style={{
@@ -38,24 +29,7 @@ export default function Home() {
           fontWeight: 400,
         }}
       >
-        <motion.div
-          className="box"
-          animate={{
-            scale: [1, 1.5, 1.5, 1, 1],
-            rotate: [0, 0, 180, 180, 0],
-            borderRadius: ["0%", "0%", "50%", "50%", "0%"],
-          }}
-          transition={{
-            duration: 2,
-            ease: "easeInOut",
-            times: [0, 0.2, 0.5, 0.8, 1],
-            repeat: Infinity,
-            repeatDelay: 1,
-          }}
-        >
-          <Image src="/logo.png" alt="Pryma Logo" width={200} height={40} />
-        </motion.div>
-        Coming soon
+        <Image src="/logo.png" alt="Pryma Logo" width={200} height={40} />
       </div>
     </>
   );
